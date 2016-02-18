@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1 class="page-header">Rooms:</h1>
+  <div class="well" ng-repeat="room in main.rooms">
+    <a href="/room/{{room._id}}">Room
+      {{room.submissions}}</a>
+    <button class="close" ng-click="main.deleteThing(room)" type="button">&times;</button>
+  </div>
+
+  <button class="btn btn-primary" ng-click="main.addThing()" type="submit">Add Room</button>
+
+</div>

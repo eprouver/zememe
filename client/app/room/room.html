@@ -1,0 +1,45 @@
+<div class="container">
+  <!-- <h1>The story starts - {{room.roomData.top.split(' ')[0]}}
+    {{room.roomData.top.split(' ')[1]}} {{room.roomData.top.split(' ')[2]}}&hellip;</h1> -->
+
+  <h1>{{room.roomData.top}}</h1>
+
+  <div ng-repeat="s in room.roomData.submissions track by $index">
+    <div class="btn btn-primary">Submission</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>Pick Background...</h2>
+      <div class="row">
+        <div class="thumbnail col-xs-4" ng-click="myData.background = img" ng-repeat="img in room.memes">
+          <div class="img" ng-style="{background: 'url(http://www.troll.me/images/'+img+'/thumb.jpg) center center no-repeat'} "/>
+          <div class="caption">
+            <p>{{img}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="fixed-middle">
+      <div class="meme-maker" ng-style="{background: 'url(http://www.troll.me/images/'+myData.background+'/'+myData.background+'.jpg) center center no-repeat black'}">
+        <h1 class="big-text">
+          <span>{{room.roomData.top}}</span>
+        </h1>
+        <h1 class="big-text">
+          <textarea ng-model="myData.bottom"></textarea>
+          <div class="prompt" ng-if="!myData.bottom">&hellip; Add Result</div>
+        </h1>
+      </div>
+
+      <hr/>
+      <div class="btn btn-success btn-block btn-lg" ng-click="room.startRound()">
+        Add Submission
+      </div>
+    </div>
+    </div>
+    <div class="btn btn-info fixed-bottom-right" onclick="window.scrollTo(0, 0)">
+      Top
+    </div>
+  </div>
+</div>
