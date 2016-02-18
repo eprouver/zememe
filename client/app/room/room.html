@@ -4,6 +4,8 @@
 
   <h1>{{room.roomData.top}}</h1>
 
+  <hr/>
+
   <div ng-repeat="s in room.roomData.submissions track by $index">
     <div class="btn btn-primary">Submission</div>
   </div>
@@ -22,7 +24,7 @@
     </div>
     <div class="col-xs-6">
       <div class="fixed-middle">
-      <div class="meme-maker" ng-style="{background: 'url(http://www.troll.me/images/'+myData.background+'/'+myData.background+'.jpg) center center no-repeat black'}">
+      <div class="meme-maker" ng-style="myData.background? {background: 'url(http://www.troll.me/images/'+myData.background+'/'+myData.background+'.jpg) center center no-repeat black'}: {}">
         <h1 class="big-text">
           <span>{{room.roomData.top}}</span>
         </h1>

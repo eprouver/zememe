@@ -18,8 +18,14 @@ angular.module('memesApp')
 
         memes.getTop(1).then(function(res){
           $http.put('/api/rooms/'+$routeParams.roomId, {
-            top: res[0]
+            top: res[0],
+            background: ''
           });
+
+          $scope.myData = {
+            background: '',
+            bottom: ''
+          };
         });
       };
 
